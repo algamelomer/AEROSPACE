@@ -7,7 +7,12 @@
         },
         {
             "source": "/(.*)",
-            "destination": "/api/index.ts"
+            "destination": "/dist/public/$1",
+            "check": true
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/dist/public/index.html"
         }
     ]
 }

@@ -63,9 +63,9 @@ app.use((req, res, next) => {
 export async function setupApp() {
   await registerRoutes(httpServer, app);
 
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "production" && process.env.VERCEL !== "1") {
     serveStatic(app);
-  } else {
+  } else if (process.env.NODE_ENV !== "production") {
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
   }
