@@ -6,9 +6,8 @@
             "destination": "/api/index.ts"
         },
         {
-            "source": "/(.*)",
-            "destination": "/dist/public/$1",
-            "check": true
+            "source": "/((?!api/).*)",
+            "destination": "/dist/public/$1"
         },
         {
             "source": "/(.*)",
