@@ -1,3 +1,6 @@
-import { app } from "../server/index";
+import { setupApp } from "../server/index";
 
-export default app;
+export default async (req: any, res: any) => {
+  const app = await setupApp();
+  return app(req, res);
+};
